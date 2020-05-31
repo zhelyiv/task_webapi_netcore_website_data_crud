@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebsiteManagement.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebsiteManagement.WebAPI.Controllers.WebsiteController">
+            <summary>
+            Website API
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.#ctor(Shared.DataServices.IWebsiteDataService)">
+            <summary>
+            
+            </summary>
+            <param name="websiteDataService"></param>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Create(Shared.ApiModel.WebsiteProxy)">
+            <summary>
+            Create new website record
+            </summary>
+            <param name="website">website model</param>
+            <returns>assigned record Id</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Update(Shared.ApiModel.WebsiteProxy)">
+            <summary>
+            Update a website record - full update(The entire record must be submitted), any missing data is considered as deleted
+            </summary>
+            <param name="website">website model, Id of the record is mandatory</param>
+            <returns>updated website model</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Patch(Shared.ApiModel.WebsiteProxy)">
+            <summary>
+            Update a website record - partial update, only data submitted is gonna be overwritten
+            </summary>
+            <param name="website"></param>
+            <returns>updated website model</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Remove(System.Int32)">
+            <summary>
+            Remove website record
+            </summary>
+            <param name="id">website Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.GetTotalRecords">
+            <summary>
+            Get website records count
+            </summary>
+            <returns>records count</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Get(System.Int32)">
+            <summary>
+            Get website records 
+            </summary>
+            <param name="id">website Id</param>
+            <returns>website model</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Get(System.Int32,System.Int32,Shared.Enums.WebsiteOrderByEnum,Shared.Enums.WebsiteOrderByAscDescEnum)">
+            <summary>
+            Get paged collection of website records 
+            </summary>
+            <param name="page">page number</param>
+            <param name="pageSize">records per page</param>
+            <param name="orderBy">fields by which  sort can be applied</param>
+            <param name="orderType">ascending or descending</param>
+            <returns>collection of website models</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Controllers.WebsiteController.Get(Shared.Enums.WebsiteOrderByEnum,Shared.Enums.WebsiteOrderByAscDescEnum)">
+            <summary>
+            Get all website records
+            </summary>
+            <param name="orderBy">predefined order options</param>
+            <param name="orderType">fields by which  sort can be applied</param>
+            <returns>collection of website models</returns>
+        </member>
+        <member name="T:WebsiteManagement.WebAPI.ExceptionExtentions">
+            <summary>
+            Exception Extentions
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.ExceptionExtentions.GetInnerExceptions(System.Exception)">
+            <summary>
+            Get collection of inner exception
+            </summary>
+            <param name="ex">parent exception</param>
+            <returns>collection of inner exception</returns>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.ExceptionExtentions.GetDbUpdateExceptionMessage(Microsoft.EntityFrameworkCore.DbUpdateException)">
+            <summary>
+            Parse DbUpdateException and extract db errors
+            </summary>
+            <param name="ex">DbUpdateException</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebsiteManagement.WebAPI.MiddlewareExtensions.CustomExceptionHandler">
+            <summary>
+            Custom ExceptionHandler
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.MiddlewareExtensions.CustomExceptionHandler.#ctor(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.MiddlewareExtensions.CustomExceptionHandler.ProcessError">
+            <summary>
+            Handle the Context error and transform it ot standartized JsonResult regarding the exception
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebsiteManagement.WebAPI.MiddlewareExtensions.ExceptionMiddlewareExtensions">
+            <summary>
+            ExceptionHandler Middleware
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.MiddlewareExtensions.ExceptionMiddlewareExtensions.UseCustomExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use Custom ExceptionHandler
+            </summary>
+            <param name="app">IApplicationBuilder instance</param>
+        </member>
+        <member name="T:WebsiteManagement.WebAPI.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Program.Main(System.String[])">
+            <summary>
+            Program entry
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create HostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebsiteManagement.WebAPI.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:WebsiteManagement.WebAPI.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Services
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebsiteManagement.WebAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
